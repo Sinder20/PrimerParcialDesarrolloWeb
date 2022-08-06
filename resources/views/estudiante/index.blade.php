@@ -1,29 +1,27 @@
 @extends ('layout.plantilla')
 @section('content')
 
-
-    <table class="table">
-        <thead>
-        <tr>
-            <th scope="col">ID</th>
-            <th scope="col">Nombre</th>
-            <th scope="col">Apellido</th>
-            <th scope="col">Telefono</th>
-            <th scope="col">Edad</th>
-            <th scope="col">Direccion</th>
-            <th scope="col">Categoria</th>
-        </tr>
-        </thead>
-        <tbody>
-        @foreach($estudiantes as $variable)
-            <tr>
-                <th scope="row">{{$variable->id}}</th>
-                <td>{{$variable->nombre}}</td>
-                <td>{{$variable->apellido}}</td>
-                <td>{{$variable->telefono}}</td>
-                <td>{{$variable->edad}}</td>
-                <td>{{$variable->direccion}}</td>
-                <td>{{$variable->id_categoria}}</td>
-            </tr>
-        @endforeach
+    <form>
+        <div class="form-group">
+            <label for="formGroupExampleInput">Ingresar Nombre</label>
+            <input type="text" class="form-control" id="formGroupExampleInput" placeholder="">
+        </div>
+        <div class="form-group">
+            <label for="formGroupExampleInput2">Ingresar Apellido</label>
+            <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="">
+        </div>
+        <div class="form-group">
+            <label for="formGroupExampleInput">Ingresar Telefono</label>
+            <input type="text" class="form-control" id="formGroupExampleInput" placeholder="">
+        </div>
+        <div class="form-group">
+            <label for="formGroupExampleInput2">Ingresar Edad</label>
+            <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="">
+        </div>
+        <div class="form-group">
+            <label for="formGroupExampleInput">Ingresar Direccion</label>
+            <input type="text" class="form-control" id="formGroupExampleInput" placeholder="">
+        </div>
+        <button type="button" class="btn btn-primary">Guardar</button>
+    </form>
 
