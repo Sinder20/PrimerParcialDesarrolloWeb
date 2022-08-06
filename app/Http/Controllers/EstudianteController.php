@@ -9,12 +9,15 @@ use Illuminate\Support\Facades\DB;
 
 class EstudianteController extends Controller
 {
-    public function index(){
-        $estudiantes=DB::table('estudiante as e')
-            ->select('e.id','e.nombre','e.apellido','e.telefono','e.edad','e.direccion')->get()
-
-        ;
-        return view('estudiante.index', compact('estudiantes'));
+    public function index(Request $request){
+        $post=new Post;
+        $post->nombre=$request->nombre;
+        $post->apellido=$request->apellido;
+        $post->telefono=$request->telefono;
+        $post->edad=$request->edad;
+        $post->direccion=$request->direccion;
+        $post->save();
+        return view('estudiante.index', compact('post'));
     }
 
 
