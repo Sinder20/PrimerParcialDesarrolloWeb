@@ -15,4 +15,9 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('principal');
+
+Route::prefix('/estudiante')->group(
+    function (){
+        Route::get('/', [\App\Http\Controllers\EstudianteController::class, 'index'])->name('index');
+    });

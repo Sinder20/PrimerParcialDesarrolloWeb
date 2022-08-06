@@ -8,11 +8,12 @@ use Illuminate\Http\Request;
 class EstudianteController extends Controller
 {
     public function index(){
-        $estudiantes = $this->read();
-        return view('estudiante.index', compact('estudiantes'));
+        $estudiante=DB::table('estudiante as e')
+            ->select('e.id','e.nombre','e.apellido','e.telefono','e.edad','e.direccion')->get()
+
+        ;
+        return view('student.index', compact('students'));
     }
 
-    public function read(){
-        return Estudiante::all();
-    }
+
 }
